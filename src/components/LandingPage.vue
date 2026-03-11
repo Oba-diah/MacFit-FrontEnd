@@ -3,33 +3,67 @@
 </script>
 
 <template>
-    <V-container max-width="100%">
-        <v-row>
-            <v-carousel>
-                <v-carousel-item src="l1.jpg" cover>  </v-carousel-item>
-                <v-carousel-item src="l2.jpg" cover>  </v-carousel-item>
-                <v-carousel-item src="l3.jpg" cover>  </v-carousel-item>
-            </v-carousel>
-        </v-row>
-    </V-container>
+    <v-container fluid class="pa-0">
+        <v-carousel
+            hide-delimiter-background
+            height="500px"
+        >
+            <v-carousel-item src="l1.jpg" cover></v-carousel-item>
+            <v-carousel-item src="l2.jpg" cover></v-carousel-item>
+            <v-carousel-item src="l3.jpg" cover></v-carousel-item>
+        </v-carousel>
+    </v-container>
     
       <!-- About Us -->
-     <v-container style="background-color:#CFD0D6" max-width="100%">
-        <v-row >
-            <v-col md="8" class="text-centre">
-                <div class="text-display-medium mb-12">Welcome to <strong>MacFit</strong> Gym</div>
-                <div class="text-title-large font weight-light-text-medium-emphasis mb-8">At MacFit, we are committed to helping people build stronger, healthier lifestyles. Our gym provides a motivating environment with modern equipment where both beginners and experienced members can work toward their fitness goals.</div>
-                <div class="text-title-large font weight-light-text-medium-emphasis mb-8">Our dedicated trainers offer guidance and support to help you improve strength, endurance, and overall wellness. We focus on proper training, consistency, and helping every member get the best results.</div>
-                <div class="text-title-large font weight-light-text-medium-emphasis mb-8">More than a gym, MacFit is a community where members motivate and support each other. Join us and take the next step toward a healthier, more confident you. 💪</div>
-                <v-btn color="#29C0F7">LEARN MORE</v-btn>
-            </v-col>
-            <v-row md="8" class="d-flex-align-centre-justify-centre fill-height">
-                <v-img src="sq 1.jpg"></v-img>
-                <v-img src="sq 2.jpg"></v-img>
-                <v-img src="sq 3.jpg"></v-img>
-            </v-row>
-        </v-row>
-     </v-container>
+     <v-container fluid style="background-color:#CFD0D6" class="py-10">
+  <v-row align="center">
+
+    <!-- Text Section -->
+    <v-col cols="12" md="6" class="text-center text-md-left">
+      <div class="text-h3 mb-6">
+        Welcome to <strong>MacFit</strong> Gym
+      </div>
+
+      <div class="text-body-1 text-medium-emphasis mb-4">
+        At MacFit, we are committed to helping people build stronger, healthier lifestyles.
+        Our gym provides a motivating environment with modern equipment where both beginners
+        and experienced members can work toward their fitness goals.
+      </div>
+
+      <div class="text-body-1 text-medium-emphasis mb-4">
+        Our dedicated trainers offer guidance and support to help you improve strength,
+        endurance, and overall wellness.
+      </div>
+
+      <div class="text-body-1 text-medium-emphasis mb-6">
+        More than a gym, MacFit is a community where members motivate and support each
+        other. Join us and take the next step toward a healthier, more confident you 💪
+      </div>
+
+      <v-btn color="#29C0F7" size="large">
+        LEARN MORE
+      </v-btn>
+    </v-col>
+
+    <!-- Images Section -->
+    <v-col cols="12" md="6">
+      <v-row>
+        <v-col cols="4">
+          <v-img src="sq 1.jpg" height="200" cover></v-img>
+        </v-col>
+
+        <v-col cols="4">
+          <v-img src="sq 2.jpg" height="200" cover></v-img>
+        </v-col>
+
+        <v-col cols="4">
+          <v-img src="sq 3.jpg" height="200" cover></v-img>
+        </v-col>
+      </v-row>
+    </v-col>
+
+  </v-row>
+</v-container>
 
      <v-container>
         <v-row>
@@ -90,17 +124,59 @@
             </v-col>
         </v-row>    
      </v-container>
+     
+     <!-- Contact Us -->
+<v-container fluid style="background-color:#CFD0D6" class="py-10">
+  
+  <v-row justify="center">
+    <v-col cols="12" class="text-center mb-6">
+      <div class="text-h4 font-weight-bold">Get in Touch</div>
+    </v-col>
+  </v-row>
 
-     <!-- Contact us  -->
-     <v-container style="background-color:#CFD0D6" max-width="100%">
-        <v-row class="text-centre">
-           <div class="text-title-large font weight-light-text-medium-emphasis mb-8">Get in Touch</div> 
-           <div class="text-title-large font weight-light-text-medium-emphasis mb-8">0713642242 | macfit@gmail.com</div>
-           <div class="text-title-large font weight-light-text-medium-emphasis mb-8">Opening Hours</div>
-           <div class="text-title-large font weight-light-text-medium-emphasis mb-8">Monday - Friday: 6:00 AM - 10:00 PM | Saturday - Sunday: 8:00 AM - 8:00 PM</div>
-           <div class="text-title-large font weight-light-text-medium-emphasis mb-8">123 Fitness Street, Health City</div>
-           <div class="text-title-large font weight-light-text-medium-emphasis mb-8">Design by Obadiah Murei</div>
+  <v-row justify="center">
 
-        </v-row>
-     </v-container>
+    <!-- Phone -->
+    <v-col cols="12" md="3" class="text-center">
+      <v-icon size="36" class="mb-2">mdi-phone</v-icon>
+      <div class="text-subtitle-1 font-weight-medium">Phone</div>
+      <div class="text-body-1">0713 642 242</div>
+    </v-col>
+
+    <!-- Email -->
+    <v-col cols="12" md="3" class="text-center">
+      <v-icon size="36" class="mb-2">mdi-email</v-icon>
+      <div class="text-subtitle-1 font-weight-medium">Email</div>
+      <div class="text-body-1">macfitgym@gmail.com</div>
+    </v-col>
+
+    <!-- Opening Hours -->
+    <v-col cols="12" md="3" class="text-center">
+      <v-icon size="36" class="mb-2">mdi-clock</v-icon>
+      <div class="text-subtitle-1 font-weight-medium">Opening Hours</div>
+      <div class="text-body-2">
+        Mon – Fri: 6:00 AM – 10:00 PM<br>
+        Sat – Sun: 8:00 AM – 8:00 PM
+      </div>
+    </v-col>
+
+    <!-- Location -->
+    <v-col cols="12" md="3" class="text-center">
+      <v-icon size="36" class="mb-2">mdi-map-marker</v-icon>
+      <div class="text-subtitle-1 font-weight-medium">Location</div>
+      <div class="text-body-1">123 Fitness Street, Health City</div>
+    </v-col>
+
+  </v-row>
+
+  <!-- Footer -->
+  <v-row class="mt-8">
+    <v-col cols="12" class="text-center">
+      <div class="text-caption text-medium-emphasis">
+        © 2026 MacFit Gym | Designed by Obadiah Murei
+      </div>
+    </v-col>
+  </v-row>
+
+</v-container>
 </template>    
