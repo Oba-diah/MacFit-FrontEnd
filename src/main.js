@@ -26,6 +26,12 @@ const vuetify = createVuetify({
   },
   theme:{
     defaultTheme: 'light',
+    name:{
+      light:{
+        primary:"#29C0F7",
+        secondary:"#80CBC4"
+      }
+    }
   },
 })
 

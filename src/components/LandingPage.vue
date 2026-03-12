@@ -7,6 +7,7 @@
         <v-carousel
             hide-delimiter-background
             height="500px"
+            show-arrows="hover"
         >
             <v-carousel-item src="l1.jpg" cover></v-carousel-item>
             <v-carousel-item src="l2.jpg" cover></v-carousel-item>
@@ -16,9 +17,8 @@
     
       <!-- About Us -->
      <v-container fluid style="background-color:#CFD0D6" class="py-10">
-  <v-row align="center">
+    <v-row align="center">
 
-    <!-- Text Section -->
     <v-col cols="12" md="6" class="text-center text-md-left">
       <div class="text-h3 mb-6">
         Welcome to <strong>MacFit</strong> Gym
@@ -126,7 +126,7 @@
      </v-container>
      
      <!-- Contact Us -->
-<v-container fluid style="background-color:#CFD0D6" class="py-10">
+<v-container fluid style="background-color:black"  class="py-10 text-white">
   
   <v-row justify="center">
     <v-col cols="12" class="text-center mb-6">

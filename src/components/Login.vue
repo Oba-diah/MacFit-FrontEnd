@@ -16,8 +16,8 @@ const router = useRouter();
   const username = ref(null)
 
   function login() {
-    const storedUserDetails = JSON.parse(localStorage.getItem('userDetails'));
-    if (storedUserDetails && storedUserDetails.email === username.value && storedUserDetails.password === password.value) {
+    const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+    if (userDetails && userDetails.email === username.value && userDetails.password === password.value) {
         alert('Login successful!')
         localStorage.setItem('isLoggedIn', true);
         router.push('/home');
@@ -43,21 +43,16 @@ const router = useRouter();
                         </v-col>
                     </v-row>
 
-                     <v-row>  
-                            <v-col md="4" class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">Username</div>
-                            </v-col>
+                     <v-row justify="center">  
                             <v-col md="6">
                                 <v-text-field variant="outlined" v-model="username" label="Email"></v-text-field>
                             </v-col>
                     </v-row>
 
-                    <v-row>
-                            <v-col md="4" class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">Password</div>
-                            </v-col>
+                    <v-row justify="center">
                             <v-col md="6">
                                 <v-text-field 
+                                    label="Password"
                                     v-model="password"
                                     :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" 
                                     :rules="[rules.required, rules.min]"

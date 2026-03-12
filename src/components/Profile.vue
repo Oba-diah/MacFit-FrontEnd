@@ -1,7 +1,26 @@
 <script setup>
+      const userDetails = JSON.parse(localStorage.getItem('userDetails'));
 
 </script>
 
 <template>
-    <h1>Profile</h1>
+    <v-container width="50%" style="background-color:aqua ;" class="mt-12">
+        <v-row>
+            <v-col>
+                <v-card>
+                    <v-img src="" class="h-50" cover></v-img>
+                    <v-card-title>{{ userDetails.name }}</v-card-title>
+                    <v-card-text>{{ userDetails.email }}</v-card-text>
+                    <v-card-text>{{ userDetails.phone }}</v-card-text>
+                    <v-card-text>{{ userDetails.gymLocation }}</v-card-text>
+                    <div v-if="userDetails.subscription">
+                    <v-card-text>Your Current Subscription is:{{ userDetails.subscription.name }} at {{ userDetails.subscription.price }}</v-card-text>
+                    </div>
+                    <div v-else>
+                        <v-btn color="primary" variant="outlined" to="/bundle"></v-btn>
+                    </div>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>    

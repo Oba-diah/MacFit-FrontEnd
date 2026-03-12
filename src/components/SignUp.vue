@@ -45,8 +45,8 @@ try {
   
 </script>
 
-<template style="background-color: #26C6DA;">
-    <v-container width="50%" class="text-center" mt="8"  >
+<template >
+    <v-container width="50%" class="text-center" mt="8" >
         <v-row>
             <v-col md="12">
                 <v-form>
@@ -61,50 +61,35 @@ try {
                         </v-col>
                     </v-row>
 
-                     <v-row>
-                            <v-col md="6" class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">First name</div>
-                            </v-col>
+                    <v-row justify="center">
                             <v-col md="6">
-                                <v-text-field variant="outlined" v-model="firstName"></v-text-field>
+                                <v-text-field variant="outlined" v-model="firstName" label="First Name"></v-text-field>
                             </v-col>
                     </v-row>
 
-                    <v-row>
-                        
-                            <v-col md="6" class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">Last name</div>
-                            </v-col>
+                    <v-row justify="center">
                             <v-col md="6">
-                                <v-text-field variant="outlined" v-model="lastName"></v-text-field>
+                                <v-text-field variant="outlined" v-model="lastName" label="Last Name"></v-text-field>
                             </v-col>
                        
                     </v-row>
 
-                    <v-row>
-                            <v-col md="6" class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">Email</div>
-                            </v-col>
+                    <v-row justify="center">
                             <v-col md="6">
-                                <v-text-field variant="outlined" v-model="email"></v-text-field>
+                                <v-text-field variant="outlined" v-model="email" label="Email"></v-text-field>
                             </v-col>
                     </v-row>
 
-                    <v-row>
-                            <v-col md="6" class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">Phone</div>
-                            </v-col>
+                    <v-row justify="center">
                             <v-col md="6">
-                                <v-text-field variant="outlined" type="number" v-model="phone"></v-text-field>
+                                <v-text-field variant="outlined" type="number" v-model="phone" label="Phone"></v-text-field>
                             </v-col>
                     </v-row>
 
-                    <v-row>
-                            <v-col md="6"class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">Password</div>
-                            </v-col>
+                    <v-row justify="center">
                             <v-col md="6">
-                                <v-text-field 
+                                <v-text-field
+                                    label="Password"
                                     v-model="password"
                                     :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                                     :rules="[rules.required, rules.min]"
@@ -115,12 +100,10 @@ try {
                         </v-col>
                     </v-row>
 
-                    <v-row>
-                            <v-col md="6"class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">ConfirmPassword</div>
-                            </v-col>
+                    <v-row justify="center">
                             <v-col md="6">
                                 <v-text-field 
+                                    label="Confirm Password"
                                     v-model="confirmPassword"
                                     :append-icon="show1confirm ? 'mdi-eye' : 'mdi-eye-off'"
                                     :rules="[rules.required, rules.min,rules.passwordMatch]"
@@ -131,8 +114,8 @@ try {
                             </v-col>
                     </v-row>
 
-                    <v-row>                          
-                          <v-col md="6" class="text-center">
+                    <v-row justify="center">                          
+                          <v-col md="3" class="text-center">
                                 <div class="text-title-large font-weight-medium text-center" >Gender</div>
                             </v-col>
                             <v-col md="6">
@@ -143,22 +126,13 @@ try {
                             </v-col>
                     </v-row>
 
-                    <v-row>
-                        
-                            <v-col md="6" class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">Date of Birth</div>
-                            </v-col>
+                    <v-row justify="center">                            
                             <v-col md="6">
-                                <v-date-input variant="outlined" v-model="dateOfBirth"></v-date-input>
+                                <v-date-input variant="outlined" v-model="dateOfBirth" label="Date Of Birth"></v-date-input>
                             </v-col>
-                        
                     </v-row>
 
-                    <v-row>
-                        
-                            <v-col md="6" class="text-center">
-                                <div class="text-title-large font-weight-medium text-center">Gym Location</div>
-                            </v-col>
+                    <v-row justify="center">
                             <v-col md="6">
                                 <v-select
                                     v-model="gymLocation"
@@ -169,12 +143,13 @@ try {
                         </v-col>
                     </v-row>
 
-                    <v-row>
+                    <v-row justify="center">
                         <v-col md="12">
                             <v-btn color="primary"variant="elevated" @click="signUp">Sign Up</v-btn>
                         </v-col>
                     </v-row>
-                    <v-row>
+
+                    <v-row justify="center">
                         <v-col md="12">
                             <div>Already have an account? <router-link to="/login">Login</router-link></div>
                         </v-col>
