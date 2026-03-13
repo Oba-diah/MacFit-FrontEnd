@@ -1,6 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 
+import { useRouter } from "vue-router";
+import {useAuth} from '../services/auth'
+
+const router = useRouter();
+const { register, loading, error } = useAuth()
+
   const rules = {
     required: value => !!value || 'Required.',
     min: v => v.length >= 8 || 'Min 8 characters',
@@ -20,25 +26,35 @@ const gender = ref(null)
 const dateOfBirth = ref(null)
 const gymLocation = ref(null)
 
-function signUp() {
-// create user object
-const userDetails ={
-    name: firstName.value + ' ' + lastName.value,
-    email: email.value,
-    phone: phone.value,
-    gender: gender.value,
-    dateOfBirth: dateOfBirth.value,  
-    password: password.value,   
-    gymLocation: gymLocation.value
+const signUp = async () => {
 
-}
-// store this data
-try {
-    localStorage.setItem('userDetails', JSON.stringify(userDetails));
-} catch (error) {
-    console.error('Error saving user details to localStorage:', error);
-}
-}
+  loading.value = true;
+  error.value = "";
+
+  const formData = new FormData();
+  formData.append("name", firstName.value +' '+ lastName.value,);
+  formData.append("email", email.value);
+  formData.append("phone", phone.value);
+  formData.append("dateOfBirth", dateOfBirth.value);
+  formData.append("gender", gender.value);
+  formData.append("gymLocation", gymLocation.value);
+  formData.append("password", password.value);
+  formData.append("role_id", 4);
+
+  try {
+    await register(formData)
+   
+    // Redirect after successful signup
+    router.push('/home').then(() => {
+        router.go(0); // Reloads the current route
+    });
+  } catch (err) {
+    // Error is already handled by the auth service
+    console.error('Sign up failed', err)
+  }
+};
+
+
 
   const confirmPassword = ref(null)
   const show1confirm = ref(false)
