@@ -21,7 +21,7 @@ export function useAuth() {
             throw new Error('Email and password are required')
         }
 
-        const response = await api.post('login', credentials)
+        const response = await api.post('login', credentials) //important line,connects backend and frontend
         const { token, user: userData } = response.data
 
         console.log(response.data)
