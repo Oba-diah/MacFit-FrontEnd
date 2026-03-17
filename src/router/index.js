@@ -37,7 +37,7 @@ const router = createRouter({
       component: GymLocations,
     },
     {
-      path: '/home',
+      path: '/homepage',
       name: 'HomePage',
       component: HomePage,
     },

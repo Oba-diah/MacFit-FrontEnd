@@ -34,7 +34,7 @@ const signUp = async () => {
   const formData = new FormData();
   formData.append("name", firstName.value +' '+ lastName.value,);
   formData.append("email", email.value);
-  formData.append("phone", phone.value);
+  formData.append("phoneNumber", phone.value);
   formData.append("dateOfBirth", dateOfBirth.value);
   formData.append("gender", gender.value);
   formData.append("gymLocation", gymLocation.value);
@@ -45,7 +45,7 @@ const signUp = async () => {
     await register(formData)
    
     // Redirect after successful signup
-    router.push('/home').then(() => {
+    router.push('/homepage').then(() => {
         router.go(0); // Reloads the current route
     });
   } catch (err) {

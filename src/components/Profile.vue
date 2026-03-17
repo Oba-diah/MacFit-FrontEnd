@@ -1,10 +1,11 @@
 <script setup>
-      const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+      const userDetails = JSON.parse(localStorage.getItem('user'));
+      
 
 </script>
 
 <template>
-    <v-container width="50%" style="background-color:aqua ;" class="mt-12">
+    <v-container width="50%" style="background-color:black ;" class="mt-12">
         <v-row>
             <v-col>
                 <v-card>
@@ -23,4 +24,6 @@
             </v-col>
         </v-row>
     </v-container>
+
+     
 </template>    

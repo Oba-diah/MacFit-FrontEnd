@@ -5,7 +5,7 @@ import {useRouter} from "vue-router"
 const router =useRouter();
 
 const showBundleDialog = ref(false)
-const isLoggedIn = localStorage.getItem('isLoggedIn') 
+const isLoggedIn = localStorage.getItem('authToken') 
 const selectedBundle =ref(null)
 const selectedPrice =ref(null)
 
@@ -19,13 +19,13 @@ function showBundle(name, price){
     }
 }
 function subscribe(){
-     const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+     const userDetails = JSON.parse(localStorage.getItem('user'));
      userDetails.subscription = {
         name: selectedBundle.value,
         price: selectedPrice.value,
      }
-     localStorage.setItem('userDetails', JSON.stringify(userDetails))
-     showBundleDialog = false
+     localStorage.setItem('user', JSON.stringify(userDetails))
+     showBundleDialog.value = false
 
 
 }
@@ -170,4 +170,58 @@ function subscribe(){
         </v-card-actions>
       </v-card>
     </v-dialog>
+     <!-- Contact Us -->
+<v-container fluid style="background-color:black"  class="py-10 text-white">
+  
+  <v-row justify="center">
+    <v-col cols="12" class="text-center mb-6">
+      <div class="text-h4 font-weight-bold">Get in Touch</div>
+    </v-col>
+  </v-row>
+
+  <v-row justify="center">
+
+    <!-- Phone -->
+    <v-col cols="12" md="3" class="text-center">
+      <v-icon size="36" class="mb-2">mdi-phone</v-icon>
+      <div class="text-subtitle-1 font-weight-medium">Phone</div>
+      <div class="text-body-1">0713 642 242</div>
+    </v-col>
+
+    <!-- Email -->
+    <v-col cols="12" md="3" class="text-center">
+      <v-icon size="36" class="mb-2">mdi-email</v-icon>
+      <div class="text-subtitle-1 font-weight-medium">Email</div>
+      <div class="text-body-1">macfitgym@gmail.com</div>
+    </v-col>
+
+    <!-- Opening Hours -->
+    <v-col cols="12" md="3" class="text-center">
+      <v-icon size="36" class="mb-2">mdi-clock</v-icon>
+      <div class="text-subtitle-1 font-weight-medium">Opening Hours</div>
+      <div class="text-body-2">
+        Mon – Fri: 6:00 AM – 10:00 PM<br>
+        Sat – Sun: 8:00 AM – 8:00 PM
+      </div>
+    </v-col>
+
+    <!-- Location -->
+    <v-col cols="12" md="3" class="text-center">
+      <v-icon size="36" class="mb-2">mdi-map-marker</v-icon>
+      <div class="text-subtitle-1 font-weight-medium">Location</div>
+      <div class="text-body-1">123 Fitness Street, Health City</div>
+    </v-col>
+
+  </v-row>
+
+  <!-- Footer -->
+  <v-row class="mt-8">
+    <v-col cols="12" class="text-center">
+      <div class="text-caption text-medium-emphasis">
+        © 2026 MacFit Gym | Designed by Obadiah Murei
+      </div>
+    </v-col>
+  </v-row>
+
+</v-container>
 </template>    
